@@ -23,7 +23,7 @@ class App extends Component {
       imageUrl: '',
       bound: {},
       route: 'signin',
-      isSignedIn: false
+      isSignedIn: false,
     }
   }
 
@@ -87,6 +87,8 @@ class App extends Component {
 
   render() {
 
+    const { isSignedIn, imageUrl, route, bound } = this.state;
+
     return (
       <div className="App" >
 
@@ -94,9 +96,9 @@ class App extends Component {
         />
         <Navigation
           onRouteChange={this.onRouteChange}
-          isSignedIn={this.isSignedIn} />
+          isSignedIn={isSignedIn} />
 
-        {this.state.route === 'home'
+        {route === 'home'
           ?
           <div>
             <Logo />
@@ -104,11 +106,11 @@ class App extends Component {
             <ImageLink
               onInputChange={this.onInputChange}
               onSubmit={this.onButtonSubmit} />
-            <FaceReco imageUrl={this.state.imageUrl} bound={this.state.bound} />
+            <FaceReco imageUrl={this.state.imageUrl} bound={bound} />
           </div>
 
           : (
-            this.state.route === 'signin'
+            route === 'signin'
               ?
               <SignIn onRouteChange={this.onRouteChange} />
               :
