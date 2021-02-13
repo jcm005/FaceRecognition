@@ -5,7 +5,7 @@ const imageLink = ({ onInputChange, onSubmit }) => {
     return (
         <div>
             <p style={{ fontFamily: 'georgia' }} className='f3'>
-                {'This Will Detect Faces In Pictures'}
+                {'Enter an image url of a face to be detected!'}
             </p>
             <div className='center'>
                 <div className='center form pa4 br3 shadow-5'>
